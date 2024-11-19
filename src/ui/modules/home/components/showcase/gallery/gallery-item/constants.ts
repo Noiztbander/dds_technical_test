@@ -7,8 +7,8 @@ export enum CardColorEnum {
 
 export const CARD_COLOR = {
   [CardColorEnum.light_blue]: {
-    background: "#460F25",
-    secondary_color: "#B4CBDB",
+    background: "#B4CBDB",
+    secondary_color: "#460F25",
   },
   [CardColorEnum.pink]: {
     background: "#E59CBA",
