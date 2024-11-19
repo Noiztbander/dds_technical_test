@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  .title {
+    font-family: helvetica-neue-light;
+    color: #080705;
+    font-weight: 500;
+    font-size: 92px;
+    line-height: 87px;
+    text-align: center;
+    width: 1000px;
+
+    span {
+      font-family: "Alkatra", system-ui;
+      font-weight: 400;
+    }
+  }
+
+  p {
+    color: #080705;
+    width: 564px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 600px;
+    font-size: 16px;
+  }
+}

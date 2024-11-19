@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: helvetica-neue-condensed;
+  src: url("/fonts/HelveticaNeue-Condensed.otf");
+}
+@font-face {
+  font-family: helvetica-neue-light;
+  src: url("/fonts/HelveticaNeue-Light.otf");
+}

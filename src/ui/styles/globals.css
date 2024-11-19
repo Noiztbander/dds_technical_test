@@ -1,4 +1,5 @@
 @import "@/ui/styles/variables.css";
+@import "@/ui/styles/fonts.css";
 
 html,
 body {
@@ -9,7 +10,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Helvetica;
+  font-family: helvetica-neue-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

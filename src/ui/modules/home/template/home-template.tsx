@@ -1,6 +1,6 @@
 import InputSearch from "../../common/input-search/input-search";
 import Select from "../../common/select/select";
-import Header from "../components/header/header";
+import BigTitle from "../components/big-title/big-title";
 import Showcase from "../components/showcase/showcase";
 
 import styles from "./home-template.module.css";
@@ -8,7 +8,7 @@ import styles from "./home-template.module.css";
 const HomeTemplate = () => {
   return (
     <main className={styles.page}>
-      <Header />
+      <BigTitle />
       <InputSearch />
       <Select />
       <Showcase />
