@@ -21,6 +21,9 @@ const tvShowEntityErrorResponse: { data: IArtworkEntity } = {
       current_page: 0,
       next_url: "",
     },
+    config: {
+      iiif_url: "https://www.artic.edu/iiif/2",
+    },
   },
 };
 

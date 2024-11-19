@@ -3,6 +3,7 @@ import { Keyable } from "@/core/types/Keyable";
 export interface IArtworkEntity extends Keyable {
   pagination: IPagination;
   data: IArtwork[];
+  config: IConfig;
 }
 
 export interface IArtwork {
@@ -21,4 +22,8 @@ export interface IPagination {
   total_pages: number;
   current_page: number;
   next_url: string;
+}
+
+export interface IConfig {
+  iiif_url: string;
 }
