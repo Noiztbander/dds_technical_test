@@ -1,0 +1,19 @@
+.tag {
+  border: solid rgb(0, 0, 0) 1px;
+  padding: 5px 17px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+
+  p {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-wrap: nowrap;
+  }
+
+  i {
+    padding-right: 10px;
+  }
+}

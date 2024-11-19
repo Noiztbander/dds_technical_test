@@ -1,0 +1,29 @@
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 352px);
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 352px);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 352px);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(1, 352px);
+  }
+}

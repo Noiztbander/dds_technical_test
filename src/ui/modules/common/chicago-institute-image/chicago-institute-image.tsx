@@ -27,8 +27,8 @@ const ChicagoInstituteImage = ({ image_id, title }: PropTypes) => {
           priority={true}
           sizes="auto"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          width={300}
-          height={300}
+          width={329}
+          height={252}
           alt={title}
           src={`${state.config.iiif_url}/${image_id}/full/843,/0/default.jpg`}
           onError={() => {
