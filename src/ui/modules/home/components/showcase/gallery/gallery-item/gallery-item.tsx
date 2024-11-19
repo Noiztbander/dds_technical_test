@@ -2,20 +2,21 @@ import ChicagoInstituteImage from "@/ui/modules/common/chicago-institute-image/c
 import TagItem from "@/ui/modules/common/tag-item/tag-item";
 
 import styles from "./gallery-item.module.css";
+import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
 
-const GalleryItem = () => {
+const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
         <ChicagoInstituteImage
-          iiif_url="https://www.artic.edu/iiif/2"
-          image_id="2d484387-2509-5e8e-2c43-22f9981972eb"
-          title="A Sunday on La Grande Jatte — 1884"
+          image_id={artwork.image_id}
+          title={artwork.title}
         />
       </div>
-      title
+      <h3 className={styles.title}>{artwork.title}</h3>
       <div className={styles.tags}>
-        <TagItem />
+        <TagItem text={artwork.artwork_type_title} />
+        <TagItem text={artwork.place_of_origin} />
       </div>
     </article>
   );

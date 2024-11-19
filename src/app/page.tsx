@@ -1,14 +1,20 @@
+import HomeTemplate from "@/ui/modules/home/template/home-template";
+import { ChicagoArtInstituteProvider } from "@/ui/lib/context/chicago-institute-context/provider";
 import { ArtworkRepository } from "@/core/art-institute-chicago/infrastructure/artwork-repository";
 import { ArtworkGetter } from "@/core/art-institute-chicago/application/artwork/artwork-getter";
-import HomeTemplate from "@/ui/modules/home/template/home-template";
 
 export default async function Home() {
   const repository = new ArtworkRepository();
   const artworkGetter = new ArtworkGetter(repository);
 
-  const discoverArtworks = await artworkGetter.getArtworks();
+  const { data, pagination, config } = await artworkGetter.getArtworks();
 
-  console.log(discoverArtworks);
-
-  return <HomeTemplate />;
+  return (
+    <ChicagoArtInstituteProvider
+      artworks={data}
+      pagination={pagination}
+      config={config}>
+      <HomeTemplate />
+    </ChicagoArtInstituteProvider>
+  );
 }

@@ -4,14 +4,16 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import styles from "./chicago-institute-image.module.css";
+import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
 
 interface PropTypes {
   image_id: string;
   title: string;
-  iiif_url: string;
 }
 
-const ChicagoInstituteImage = ({ image_id, title, iiif_url }: PropTypes) => {
+const ChicagoInstituteImage = ({ image_id, title }: PropTypes) => {
+  const { state } = useChicagoArtInsTituteContext();
+
   const [isErrorImage, setIsErrorImage] = useState<boolean>(false);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const ChicagoInstituteImage = ({ image_id, title, iiif_url }: PropTypes) => {
           width={300}
           height={300}
           alt={title}
-          src={`${iiif_url}/${image_id}/full/843,/0/default.jpg`}
+          src={`${state.config.iiif_url}/${image_id}/full/843,/0/default.jpg`}
           onError={() => {
             setIsErrorImage(true);
           }}

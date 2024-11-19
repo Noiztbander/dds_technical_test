@@ -1,11 +1,17 @@
+"use client";
+
+import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
 import GalleryItem from "./gallery-item/gallery-item";
+import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
 
 const Gallery = () => {
-  // sacar la data de la galeria de la store
+  const { state } = useChicagoArtInsTituteContext();
 
   return (
     <section>
-      <GalleryItem />
+      {state.artworks.map((artwork: IArtwork) => (
+        <GalleryItem key={artwork.image_id} artwork={artwork} />
+      ))}
     </section>
   );
 };
