@@ -1,6 +1,7 @@
 import { ArtworkRepository } from "@/core/art-institute-chicago/infrastructure/artwork-repository";
-import styles from "./page.module.css";
 import { ArtworkGetter } from "@/core/art-institute-chicago/application/artwork/artwork-getter";
+import HomeTemplate from "@/ui/modules/home/template/home-template";
+import styles from "../ui/styles/page.module.css";
 
 export default async function Home() {
   const repository = new ArtworkRepository();
@@ -10,5 +11,9 @@ export default async function Home() {
 
   console.log(discoverArtworks);
 
-  return <div className={styles.page}></div>;
+  return (
+    <div className={styles.page}>
+      <HomeTemplate />
+    </div>
+  );
 }
