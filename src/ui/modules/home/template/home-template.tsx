@@ -1,15 +1,17 @@
-import InputSearch from "../../common/input-search/InputSearch";
-import Select from "../../common/select/Select";
-import Gallery from "../components/gallery/Gallery";
-import Header from "../components/header/Header";
+import InputSearch from "../../common/input-search/input-search";
+import Select from "../../common/select/select";
+import Header from "../components/header/header";
+import Showcase from "../components/showcase/showcase";
+
+import styles from "./home-template.module.css";
 
 const HomeTemplate = () => {
   return (
-    <main>
+    <main className={styles.page}>
       <Header />
       <InputSearch />
       <Select />
-      <Gallery />
+      <Showcase />
     </main>
   );
 };
