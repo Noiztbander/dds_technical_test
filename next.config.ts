@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "http",
-        hostname: "cdna.artstation.com",
+        hostname: "artic.edu",
       },
     ],
   },
