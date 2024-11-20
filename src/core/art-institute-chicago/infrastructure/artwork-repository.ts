@@ -10,7 +10,7 @@ function responseHandler(res: Response) {
   return res.json();
 }
 
-const tvShowEntityErrorResponse: { data: IArtworkEntity } = {
+const artworkEntityErrorResponse: { data: IArtworkEntity } = {
   data: {
     data: [],
     pagination: {
@@ -35,7 +35,7 @@ export class ArtworkRepository implements IArtworkRepository {
   async getArtworks(): Promise<RequestResponse<IArtworkEntity>> {
     try {
       const response = await fetch(
-        `${artInstituteChicagoConfig.baseUrl}/artworks?fields=id,title,place_of_origin,artwork_type_id,artwork_type_title,image_id&page=1&limit=12`,
+        `${artInstituteChicagoConfig.baseUrl}/artworks?fields=id,title,place_of_origin,artwork_type_title,image_id&page=1&limit=12`,
         {
           ...requestConfig("GET"),
         }
@@ -44,7 +44,7 @@ export class ArtworkRepository implements IArtworkRepository {
       return { data: response };
     } catch (err) {
       console.log(err);
-      return tvShowEntityErrorResponse;
+      return artworkEntityErrorResponse;
     }
   }
 }
