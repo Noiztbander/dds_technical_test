@@ -3,6 +3,11 @@ import { IInitialChicagoArtInstituteState } from "./types";
 export const initialChicagoArtInstituteState: IInitialChicagoArtInstituteState =
   {
     artworks: [],
+    artworkTypes: [],
+    filter: {
+      query: "",
+      selectedArtworkTypes: {},
+    },
     pagination: {
       total: 0,
       limit: 0,

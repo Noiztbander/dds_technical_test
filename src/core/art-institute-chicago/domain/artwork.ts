@@ -1,9 +1,16 @@
 import { Keyable } from "@/core/types/Keyable";
 
-export interface IArtworkEntity extends Keyable {
+interface IChicagoArtInstitute extends Keyable {
   pagination: IPagination;
-  data: IArtwork[];
   config: IConfig;
+}
+
+export interface IArtworkEntity extends IChicagoArtInstitute {
+  data: IArtwork[];
+}
+
+export interface IArtworkTypeEntity extends IChicagoArtInstitute {
+  data: IArtworkType[];
 }
 
 export interface IArtwork {
@@ -13,6 +20,11 @@ export interface IArtwork {
   artwork_type_id: string;
   artwork_type_title: string;
   image_id: string;
+}
+
+export interface IArtworkType {
+  id: string | number;
+  title: string;
 }
 
 export interface IPagination {

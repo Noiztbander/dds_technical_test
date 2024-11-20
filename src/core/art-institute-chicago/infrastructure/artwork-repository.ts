@@ -1,7 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { RequestResponse } from "@/core/types/RequestResponse";
-import { IArtworkEntity } from "../domain/artwork";
+import { IArtworkEntity, IArtworkTypeEntity } from "../domain/artwork";
 import { requestConfig } from "@/core/utils/requestConfig";
 import { artInstituteChicagoConfig } from "../config";
+import {
+  DEFAULT_ARTWORK_TYPES,
+  DEFAULT_CONFIG,
+  DEFAULT_PAGINATION,
+} from "../domain/constants";
 
 function responseHandler(res: Response) {
   if (!res.ok) {
@@ -10,25 +16,18 @@ function responseHandler(res: Response) {
   return res.json();
 }
 
-const artworkEntityErrorResponse: { data: IArtworkEntity } = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const artworkEntityErrorResponse = (items?: any[]) => ({
   data: {
-    data: [],
-    pagination: {
-      total: 0,
-      limit: 0,
-      offset: 0,
-      total_pages: 0,
-      current_page: 0,
-      next_url: "",
-    },
-    config: {
-      iiif_url: "https://www.artic.edu/iiif/2",
-    },
+    data: items || [],
+    pagination: DEFAULT_PAGINATION,
+    config: DEFAULT_CONFIG,
   },
-};
+});
 
 export interface IArtworkRepository {
   getArtworks(): Promise<RequestResponse<IArtworkEntity>>;
+  getArtworkTypes(): Promise<RequestResponse<IArtworkTypeEntity>>;
 }
 
 export class ArtworkRepository implements IArtworkRepository {
@@ -43,8 +42,22 @@ export class ArtworkRepository implements IArtworkRepository {
 
       return { data: response };
     } catch (err) {
-      console.log(err);
-      return artworkEntityErrorResponse;
+      return artworkEntityErrorResponse();
+    }
+  }
+
+  async getArtworkTypes(): Promise<RequestResponse<IArtworkTypeEntity>> {
+    try {
+      const response = await fetch(
+        `${artInstituteChicagoConfig.baseUrl}/artwork-types?fields=id,title&limit=24`,
+        {
+          ...requestConfig("GET"),
+        }
+      ).then(responseHandler);
+
+      return { data: response };
+    } catch (err) {
+      return artworkEntityErrorResponse(DEFAULT_ARTWORK_TYPES);
     }
   }
 }

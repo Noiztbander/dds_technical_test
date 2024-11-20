@@ -8,13 +8,16 @@ import {
   SET_SEARCH_QUERY,
   SET_PAGINATION,
   SET_CONFIG,
+  UPDATE_FILTER_ARTWORK_TYPES,
 } from "./names";
 import {
   setConfig,
   setPagination,
   setSearchQuery,
   updateArtworks,
+  updateFilterArtworkTypes,
 } from "./types";
+import { FilterArtworkTypes } from "../types";
 
 export const runUpdateArtworks = (
   query: string | undefined
@@ -36,4 +39,11 @@ export const runSetPagination = (pagination: IPagination): setPagination => ({
 export const runSetConfig = (config: IConfig): setConfig => ({
   type: SET_CONFIG,
   value: config,
+});
+
+export const runUpdateFilterArtworkTypes = (
+  selectedArtworkTypes: FilterArtworkTypes
+): updateFilterArtworkTypes => ({
+  type: UPDATE_FILTER_ARTWORK_TYPES,
+  value: selectedArtworkTypes,
 });

@@ -8,7 +8,9 @@ import {
   SET_PAGINATION,
   SET_SEARCH_QUERY,
   UPDATE_ARTWORKS,
+  UPDATE_FILTER_ARTWORK_TYPES,
 } from "./names";
+import { FilterArtworkTypes } from "../types";
 
 export interface updateArtworks {
   type: typeof UPDATE_ARTWORKS;
@@ -28,4 +30,9 @@ export interface setPagination {
 export interface setConfig {
   type: typeof SET_CONFIG;
   value: IConfig;
+}
+
+export interface updateFilterArtworkTypes {
+  type: typeof UPDATE_FILTER_ARTWORK_TYPES;
+  value: FilterArtworkTypes;
 }

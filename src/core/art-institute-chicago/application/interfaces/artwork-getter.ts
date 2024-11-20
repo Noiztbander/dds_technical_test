@@ -1,5 +1,6 @@
-import { IArtworkEntity } from "../../domain/artwork";
+import { IArtworkEntity, IArtworkTypeEntity } from "../../domain/artwork";
 
 export interface IArtworkGetter {
   getArtworks(): Promise<IArtworkEntity>;
+  getArtworkTypes(): Promise<IArtworkTypeEntity>;
 }

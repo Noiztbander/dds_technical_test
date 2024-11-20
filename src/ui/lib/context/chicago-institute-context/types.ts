@@ -1,5 +1,6 @@
 import {
   IArtwork,
+  IArtworkType,
   IConfig,
   IPagination,
 } from "@/core/art-institute-chicago/domain/artwork";
@@ -15,9 +16,15 @@ export interface IAppContext {
   dispatch: Dispatch<SetStateAction<IAction>>;
 }
 
+export type FilterArtworkTypes = { [key: string]: boolean };
+
 export interface IInitialChicagoArtInstituteState {
-  search_query?: string;
   artworks: IArtwork[];
   pagination: IPagination;
   config: IConfig;
+  artworkTypes: IArtworkType[];
+  filter: {
+    query?: string;
+    selectedArtworkTypes: FilterArtworkTypes;
+  };
 }

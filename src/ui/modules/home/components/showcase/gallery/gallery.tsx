@@ -4,9 +4,14 @@ import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institut
 import GalleryItem from "./gallery-item/gallery-item";
 import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
 import styles from "./gallery.module.css";
+import { useEffect } from "react";
 
 const Gallery = () => {
   const { state } = useChicagoArtInsTituteContext();
+
+  useEffect(() => {
+    console.log("showcase", state);
+  }, [state]);
 
   return (
     <section className={styles.gallery}>

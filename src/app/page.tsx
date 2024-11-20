@@ -7,11 +7,18 @@ export default async function Home() {
   const repository = new ArtworkRepository();
   const artworkGetter = new ArtworkGetter(repository);
 
-  const { data, pagination, config } = await artworkGetter.getArtworks();
+  const {
+    data: artworks,
+    pagination,
+    config,
+  } = await artworkGetter.getArtworks();
+
+  const { data: artworkTypes } = await artworkGetter.getArtworkTypes();
 
   return (
     <ChicagoArtInstituteProvider
-      artworks={data}
+      artworks={artworks}
+      artworkTypes={artworkTypes}
       pagination={pagination}
       config={config}>
       <HomeTemplate />
