@@ -1,13 +1,12 @@
 .selectContainer {
   position: relative;
   width: 301px;
-  height: fit-content;
-  padding-bottom: 80px;
+  height: 51px;
 
   .button {
     cursor: pointer;
     width: inherit;
-    height: 51px;
+    height: inherit;
     background-color: hsl(40, 23%, 3%);
     border: 0;
     border-radius: 10px;
@@ -26,7 +25,6 @@
   .fieldset {
     height: 300px;
     width: 100%;
-    bottom: -220px;
     background-color: hsl(40, 23%, 3%);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;

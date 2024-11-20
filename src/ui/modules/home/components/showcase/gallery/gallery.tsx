@@ -43,8 +43,11 @@ const Gallery = () => {
 
   return (
     <section className={styles.gallery}>
-      {filteredArtworks.map((artwork: IArtwork) => (
-        <GalleryItem key={artwork.image_id} artwork={artwork} />
+      {filteredArtworks.map((artwork: IArtwork, index) => (
+        <GalleryItem
+          key={`artwork-${index}-${artwork.image_id}`}
+          artwork={artwork}
+        />
       ))}
     </section>
   );

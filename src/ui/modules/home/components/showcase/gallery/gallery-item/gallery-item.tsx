@@ -1,5 +1,4 @@
 import ChicagoInstituteImage from "@/ui/modules/common/chicago-institute-image/chicago-institute-image";
-import TagItem from "@/ui/modules/common/tag-item/tag-item";
 
 import styles from "./gallery-item.module.css";
 import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
@@ -12,6 +11,7 @@ import {
   pinkWords,
 } from "./constants";
 import { useMemo } from "react";
+import RoundTagItem from "@/ui/modules/common/tags/round-tag-item/round-tag-item";
 
 const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
   const getCardColor = useMemo((): {
@@ -64,12 +64,12 @@ const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
         {artwork.title}
       </p>
       <div className={styles.tags}>
-        <TagItem
+        <RoundTagItem
           inverse={true}
           text={artwork.artwork_type_title}
           color={getCardColor}
         />
-        <TagItem
+        <RoundTagItem
           icon={true}
           text={artwork.place_of_origin}
           color={getCardColor}

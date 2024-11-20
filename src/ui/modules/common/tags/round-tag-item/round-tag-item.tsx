@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import MapPointIcon from "../icons/map-point";
-import styles from "./tag-item.module.css";
+import MapPointIcon from "../../icons/map-point";
+import styles from "./round-tag-item.module.css";
 
-const TagItem = ({
+const RoundTagItem = ({
   text,
   icon,
   color = { background: "#282E46", secondary_color: "#B4CBDB" },
@@ -36,4 +36,4 @@ const TagItem = ({
   );
 };
 
-export default TagItem;
+export default RoundTagItem;
