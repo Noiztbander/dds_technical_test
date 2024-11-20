@@ -16,4 +16,10 @@ export class ArtworkGetter implements IArtworkGetter {
 
     return response.data;
   }
+
+  async searchArtworks({ query }: { query: string }): Promise<IArtworkEntity> {
+    const response = await this.repository.searchArtworks({ query });
+
+    return response.data;
+  }
 }

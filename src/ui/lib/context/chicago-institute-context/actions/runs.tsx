@@ -19,16 +19,19 @@ import {
 } from "./types";
 import { FilterArtworkTypes } from "../types";
 
-export const runUpdateArtworks = (
-  query: string | undefined
-): setSearchQuery => ({
+export const runUpdateArtworks = (payload: {
+  pagination: IPagination;
+  artworks: IArtwork[];
+}): updateArtworks => ({
   type: UPDATE_ARTWORKS,
-  value: query,
+  value: payload,
 });
 
-export const runSetSearchQuery = (artworks: IArtwork[]): updateArtworks => ({
+export const runSetSearchQuery = (
+  query: string | undefined
+): setSearchQuery => ({
   type: SET_SEARCH_QUERY,
-  value: artworks,
+  value: query,
 });
 
 export const runSetPagination = (pagination: IPagination): setPagination => ({

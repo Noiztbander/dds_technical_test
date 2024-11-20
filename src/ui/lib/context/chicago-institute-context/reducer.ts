@@ -17,7 +17,8 @@ import { IInitialChicagoArtInstituteState as State } from "./types";
 export const ChicagoArtInstituteReducer = {
   [UPDATE_ARTWORKS]: (state: State, action: updateArtworks): State => ({
     ...state,
-    artworks: action.value,
+    artworks: action.value.artworks,
+    pagination: action.value.pagination,
   }),
   [SET_SEARCH_QUERY]: (state: State, action: setSearchQuery): State => ({
     ...state,

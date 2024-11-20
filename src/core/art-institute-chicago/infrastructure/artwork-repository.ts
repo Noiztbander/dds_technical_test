@@ -28,6 +28,11 @@ const artworkEntityErrorResponse = (items?: any[]) => ({
 export interface IArtworkRepository {
   getArtworks(): Promise<RequestResponse<IArtworkEntity>>;
   getArtworkTypes(): Promise<RequestResponse<IArtworkTypeEntity>>;
+  searchArtworks({
+    query,
+  }: {
+    query: string;
+  }): Promise<RequestResponse<IArtworkEntity>>;
 }
 
 export class ArtworkRepository implements IArtworkRepository {
@@ -58,6 +63,25 @@ export class ArtworkRepository implements IArtworkRepository {
       return { data: response };
     } catch (err) {
       return artworkEntityErrorResponse(DEFAULT_ARTWORK_TYPES);
+    }
+  }
+
+  async searchArtworks({
+    query,
+  }: {
+    query: string;
+  }): Promise<RequestResponse<IArtworkEntity>> {
+    try {
+      const response = await fetch(
+        `${artInstituteChicagoConfig.baseUrl}/artworks/search?q=${query}&fields=id,title,place_of_origin,artwork_type_title,image_id&page=1&limit=12`,
+        {
+          ...requestConfig("GET"),
+        }
+      ).then(responseHandler);
+
+      return { data: response };
+    } catch (err) {
+      return artworkEntityErrorResponse();
     }
   }
 }

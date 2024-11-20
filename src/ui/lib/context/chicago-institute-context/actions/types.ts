@@ -14,7 +14,7 @@ import { FilterArtworkTypes } from "../types";
 
 export interface updateArtworks {
   type: typeof UPDATE_ARTWORKS;
-  value: IArtwork[];
+  value: { pagination: IPagination; artworks: IArtwork[] };
 }
 
 export interface setSearchQuery {
