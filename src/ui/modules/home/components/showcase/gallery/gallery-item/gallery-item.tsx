@@ -44,10 +44,6 @@ const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
     return CARD_COLOR[option];
   }, [artwork]);
 
-  if (!artwork.image_id) {
-    return null;
-  }
-
   return (
     <article
       className={styles.card}
