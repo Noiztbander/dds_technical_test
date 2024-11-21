@@ -22,7 +22,7 @@
     height: 40px;
     min-width: 100px;
 
-    i svg {
+    .icon svg {
       transform: rotate(90deg) translateX(-2px);
     }
   }
@@ -38,7 +38,7 @@
     height: 40px;
     min-width: 100px;
 
-    i svg {
+    .icon svg {
       transform: rotate(-90deg) translateX(1px);
     }
   }

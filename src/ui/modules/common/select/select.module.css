@@ -17,7 +17,7 @@
     align-items: center;
     padding: 15px 23px;
 
-    p {
+    .text {
       font-size: 18px;
       color: white;
       font-weight: 700;

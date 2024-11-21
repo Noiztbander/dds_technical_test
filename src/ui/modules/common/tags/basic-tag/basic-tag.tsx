@@ -20,7 +20,7 @@ const BasicTag = ({
       )}
       onClick={onClickHandler}>
       <p>{text}</p>
-      <CloseIcon color="black" />
+      <CloseIcon color="black" height="10" width="10" className={styles.icon} />
     </button>
   );
 };

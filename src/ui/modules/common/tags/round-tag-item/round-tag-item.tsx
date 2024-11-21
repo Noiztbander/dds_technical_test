@@ -30,8 +30,12 @@ const RoundTagItem = ({
 
   return (
     <span className={styles.tag} style={tagColor}>
-      {icon && <MapPointIcon color={color.secondary_color} />}
-      <p>{text}</p>
+      {icon && (
+        <div className={styles.icon}>
+          <MapPointIcon color={color.secondary_color} />
+        </div>
+      )}
+      <p className={styles.text}>{text}</p>
     </span>
   );
 };

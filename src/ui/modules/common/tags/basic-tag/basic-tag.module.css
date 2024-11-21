@@ -9,4 +9,9 @@
   gap: 10px;
   border: unset;
   height: 40px;
+
+  .icon {
+    height: 10px;
+    width: 10px;
+  }
 }

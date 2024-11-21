@@ -9,9 +9,10 @@ import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institut
 interface PropTypes {
   image_id: string;
   title: string;
+  className?: string;
 }
 
-const ChicagoInstituteImage = ({ image_id, title }: PropTypes) => {
+const ChicagoInstituteImage = ({ image_id, title, className }: PropTypes) => {
   const { state } = useChicagoArtInsTituteContext();
 
   const [isErrorImage, setIsErrorImage] = useState<boolean>(false);
@@ -24,6 +25,7 @@ const ChicagoInstituteImage = ({ image_id, title }: PropTypes) => {
     <>
       {!isErrorImage ? (
         <Image
+          className={className}
           priority={true}
           sizes="auto"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}

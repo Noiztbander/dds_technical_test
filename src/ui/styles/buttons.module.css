@@ -7,7 +7,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 
-  path {
+  .path {
     fill: #080705;
   }
 }
@@ -20,7 +20,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 
-  path {
+  .path {
     fill: #ffffff;
   }
 }

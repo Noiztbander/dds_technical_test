@@ -54,6 +54,7 @@ const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
       style={{ backgroundColor: getCardColor.background }}>
       <div className={styles.imageContainer}>
         <ChicagoInstituteImage
+          className={styles.img}
           image_id={artwork.image_id}
           title={artwork.title}
         />

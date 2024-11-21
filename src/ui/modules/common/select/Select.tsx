@@ -39,7 +39,7 @@ const Select = () => {
             ? { borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }
             : {}
         }>
-        <p>Filter by category</p>
+        <p className={styles.text}>Filter by category</p>
         <div style={{ transform: isOpen ? "scale(-1)" : "unset" }}>
           <ArrowDown />
         </div>

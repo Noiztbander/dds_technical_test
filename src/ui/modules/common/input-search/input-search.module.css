@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 564px;
 
-  input {
+  .input {
     padding: 10px 20px;
     width: 100%;
     height: 100%;
@@ -16,18 +16,16 @@
     color: #080705;
   }
 
-  button {
+  .button {
     position: absolute;
     right: 20px;
     top: 23px;
     background-color: transparent;
     border: none;
 
-    i {
-      svg {
-        height: 27px;
-        width: 27px;
-      }
+    .icon {
+      height: 27px;
+      width: 27px;
     }
   }
 }
@@ -36,18 +34,16 @@
   .inputSearch {
     height: 49px;
 
-    input {
+    .input {
       font-size: 20px;
     }
 
-    button {
+    .button {
       top: 18px;
 
-      i {
-        svg {
-          height: 15px;
-          width: 15px;
-        }
+      .icon {
+        height: 15px;
+        width: 15px;
       }
     }
   }

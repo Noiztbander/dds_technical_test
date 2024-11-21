@@ -1,11 +1,22 @@
-const SearchIcon = ({ color = "#080705" }: { color?: string }) => {
+const SearchIcon = ({
+  color = "#080705",
+  className,
+  height = "10",
+  width = "10",
+}: {
+  color?: string;
+  width?: string;
+  height?: string;
+  className?: string;
+}) => {
   return (
     <i>
       <svg
-        width="10"
-        height="10"
+        className={className}
+        width={width}
+        height={height}
         viewBox="0 0 27 27"
-        fill="none"
+        fill={color}
         xmlns="http://www.w3.org/2000/svg">
         <path
           opacity="0.5"

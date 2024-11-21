@@ -15,6 +15,7 @@ const OptionItem = ({
   return (
     <label className={styles.option} htmlFor={value}>
       <input
+        className={styles.input}
         id={value}
         type="checkbox"
         name={value}

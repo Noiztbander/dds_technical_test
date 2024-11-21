@@ -41,7 +41,7 @@ const PaginationFooter = () => {
             buttonStyles.color_inverse_black
           )}
           onClick={onClickPreviousPageHandler}>
-          <ArrowDown />
+          <ArrowDown className={styles.icon} />
           Previous page
         </button>
       )}
@@ -59,7 +59,7 @@ const PaginationFooter = () => {
           )}
           onClick={onClickNextPageHandler}>
           Next page
-          <ArrowDown />
+          <ArrowDown className={styles.icon} />
         </button>
       )}
     </section>

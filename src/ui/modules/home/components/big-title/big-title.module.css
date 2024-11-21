@@ -15,13 +15,13 @@
     width: 100%;
     max-width: 1000px;
 
-    span {
+    .span {
       font-family: "Alkatra", system-ui;
       font-weight: 400;
     }
   }
 
-  p {
+  .text {
     color: #080705;
     width: 100%;
     max-width: 564px;

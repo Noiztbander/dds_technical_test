@@ -43,14 +43,20 @@ const InputSearch = () => {
   return (
     <div className={styles.inputSearch}>
       <input
+        className={styles.input}
         value={query}
         placeholder="Search the archive"
         onChange={onInputCHangeHandler}
       />
       <button
+        className={styles.button}
         onClick={onClickHandler}
         style={{ cursor: query.length ? "pointer" : "initial" }}>
-        {query?.length ? <CloseIcon /> : <SearchIcon />}
+        {query?.length ? (
+          <CloseIcon className={styles.icon} color="black" />
+        ) : (
+          <SearchIcon className={styles.icon} />
+        )}
       </button>
     </div>
   );
