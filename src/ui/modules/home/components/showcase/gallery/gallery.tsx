@@ -6,7 +6,7 @@ import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
 import styles from "./gallery.module.css";
 import { useEffect, useState } from "react";
 import { FilterArtworkTypes } from "@/ui/lib/context/chicago-institute-context/types";
-import { artworkTypesToStringArrayTransformer } from "@/ui/modules/common/select/utils";
+import { artworkTypesToStringArrayTransformer } from "@/ui/modules/common/multiple-select/utils";
 
 const Gallery = () => {
   const { state } = useChicagoArtInsTituteContext();

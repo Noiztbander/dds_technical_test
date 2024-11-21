@@ -1,14 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { ChangeEvent, useState } from "react";
-import styles from "./select.module.css";
 import ArrowDown from "../icons/arrow-down";
 import OptionItem from "./option-item/option-item";
 import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
 import { runUpdateFilterArtworkTypes } from "@/ui/lib/context/chicago-institute-context/actions/runs";
 
-const Select = () => {
+import styles from "./multiple-select.module.css";
+
+const MultipleSelect = () => {
   const { state, dispatch } = useChicagoArtInsTituteContext();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -61,4 +61,4 @@ const Select = () => {
   );
 };
 
-export default Select;
+export default MultipleSelect;
