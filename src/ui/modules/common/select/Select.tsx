@@ -26,7 +26,11 @@ const Select = () => {
   };
 
   return (
-    <div className={styles.selectContainer}>
+    <div
+      className={styles.selectContainer}
+      onMouseLeave={() => {
+        setIsOpen(false);
+      }}>
       <button
         className={styles.button}
         onClick={onClickHandler}
