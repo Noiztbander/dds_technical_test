@@ -1,7 +1,12 @@
 import { IArtworkEntity, IArtworkTypeEntity } from "../../domain/artwork";
 
 export interface IArtworkGetter {
-  getArtworks(): Promise<IArtworkEntity>;
   getArtworkTypes(): Promise<IArtworkTypeEntity>;
-  searchArtworks({ query }: { query: string }): Promise<IArtworkTypeEntity>;
+  getArtworks({
+    query,
+    current_page,
+  }: {
+    query?: string;
+    current_page?: number;
+  }): Promise<IArtworkEntity>;
 }

@@ -6,12 +6,18 @@ import { ArtworkRepository } from "@/core/art-institute-chicago/infrastructure/a
 const repository = new ArtworkRepository();
 const artworkGetter = new ArtworkGetter(repository);
 
-export const fetchGetArtworks = async () => {
+export const fetchGetArtworks = async ({
+  query,
+  current_page,
+}: {
+  query?: string;
+  current_page?: number;
+}) => {
   const {
     data: artworks,
     pagination,
     config,
-  } = await artworkGetter.getArtworks();
+  } = await artworkGetter.getArtworks({ current_page, query });
 
   return {
     artworks,
@@ -24,12 +30,4 @@ export const fetchGetArtworkTypes = async () => {
   const { data: artworkTypes } = await artworkGetter.getArtworkTypes();
 
   return { artworkTypes };
-};
-
-export const fetchSearchArtworks = async (query: string) => {
-  const { data: artworks, pagination } = await artworkGetter.searchArtworks({
-    query,
-  });
-
-  return { artworks, pagination };
 };

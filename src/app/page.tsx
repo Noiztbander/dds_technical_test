@@ -4,7 +4,7 @@ import { fetchGetArtworks, fetchGetArtworkTypes } from "./actions";
 
 export default async function Home() {
   const { artworkTypes } = await fetchGetArtworkTypes();
-  const { artworks, pagination, config } = await fetchGetArtworks();
+  const { artworks, pagination, config } = await fetchGetArtworks({});
 
   return (
     <ChicagoArtInstituteProvider

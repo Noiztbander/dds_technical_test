@@ -41,6 +41,14 @@ const Gallery = () => {
     setFilteredArtworks(filteredArtworks);
   }, [state]);
 
+  if (filteredArtworks.length === 0) {
+    return (
+      <div className={styles.noArtworks}>
+        <h1>No artworks :(</h1>
+      </div>
+    );
+  }
+
   return (
     <section className={styles.gallery}>
       {filteredArtworks.map((artwork: IArtwork, index) => (

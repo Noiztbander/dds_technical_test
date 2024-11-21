@@ -5,12 +5,12 @@ import { ChangeEvent, useEffect, useState } from "react";
 import SearchIcon from "../icons/search-icon";
 import styles from "./input-search.module.css";
 import useDebounce from "@/ui/hooks/useDebounce";
-import { fetchSearchArtworks } from "@/app/actions";
 import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
 import {
   runSetSearchQuery,
   runUpdateArtworks,
 } from "@/ui/lib/context/chicago-institute-context/actions/runs";
+import { fetchGetArtworks } from "@/app/actions";
 
 const InputSearch = () => {
   const { dispatch, state } = useChicagoArtInsTituteContext();
@@ -27,7 +27,7 @@ const InputSearch = () => {
   }, [debouncedInputValue]);
 
   useEffect(() => {
-    fetchSearchArtworks(state.filter.query || "").then((result) => {
+    fetchGetArtworks({ query: state.filter.query || "" }).then((result) => {
       const { pagination, artworks } = result;
       dispatch(runUpdateArtworks({ pagination, artworks }));
     });

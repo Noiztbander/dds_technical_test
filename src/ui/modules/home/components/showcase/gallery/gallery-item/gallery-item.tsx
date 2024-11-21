@@ -69,11 +69,13 @@ const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
           text={artwork.artwork_type_title}
           color={getCardColor}
         />
-        <RoundTagItem
-          icon={true}
-          text={artwork.place_of_origin}
-          color={getCardColor}
-        />
+        {artwork.place_of_origin && (
+          <RoundTagItem
+            icon={true}
+            text={artwork.place_of_origin}
+            color={getCardColor}
+          />
+        )}
       </div>
     </article>
   );
