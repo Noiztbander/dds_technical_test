@@ -13,12 +13,12 @@ const MultipleSelect = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(
-      runUpdateFilterArtworkTypes({
-        ...state.filter.selectedArtworkTypes,
-        [event.target.name]: event.target.checked,
-      })
-    );
+    const artworkTypes = {
+      ...state.filter.selectedArtworkTypes,
+      [event.target.name]: event.target.checked,
+    };
+
+    dispatch(runUpdateFilterArtworkTypes(artworkTypes));
   };
 
   const onClickHandler = () => {

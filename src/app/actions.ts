@@ -9,15 +9,25 @@ const artworkGetter = new ArtworkGetter(repository);
 export const fetchGetArtworks = async ({
   query,
   current_page,
+  artwork_types,
 }: {
   query?: string;
   current_page?: number;
+  artwork_types?: string[];
 }) => {
   const {
     data: artworks,
     pagination,
     config,
-  } = await artworkGetter.getArtworks({ current_page, query });
+  } = await artworkGetter.getArtworks({ current_page, query, artwork_types });
+
+  console.log({
+    query,
+    current_page,
+    artwork_types,
+    artworks,
+    pagination,
+  });
 
   return {
     artworks,

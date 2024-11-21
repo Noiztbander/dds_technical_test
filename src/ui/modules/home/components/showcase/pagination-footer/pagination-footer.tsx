@@ -3,32 +3,20 @@
 import classNames from "classnames";
 import ArrowDown from "@/ui/modules/common/icons/arrow-down";
 import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
-import { fetchGetArtworks } from "@/app/actions";
-import { runUpdateArtworks } from "@/ui/lib/context/chicago-institute-context/actions/runs";
 import styles from "./pagination-footer.module.css";
 import buttonStyles from "@/ui/styles/buttons.module.css";
+import { useFetchArtworks } from "@/ui/hooks/useFetchArtworks";
 
 const PaginationFooter = () => {
-  const { state, dispatch } = useChicagoArtInsTituteContext();
+  const { updateArtworks } = useFetchArtworks();
+  const { state } = useChicagoArtInsTituteContext();
 
   const onClickNextPageHandler = async () => {
-    await fetchGetArtworks({
-      query: state.filter.query,
-      current_page: state.pagination.current_page + 1,
-    }).then((response) => {
-      const { artworks, pagination } = response;
-      dispatch(runUpdateArtworks({ pagination, artworks }));
-    });
+    updateArtworks(state.pagination.current_page + 1);
   };
 
   const onClickPreviousPageHandler = async () => {
-    await fetchGetArtworks({
-      query: state.filter.query,
-      current_page: state.pagination.current_page - 1,
-    }).then((response) => {
-      const { artworks, pagination } = response;
-      dispatch(runUpdateArtworks({ pagination, artworks }));
-    });
+    updateArtworks(state.pagination.current_page - 1);
   };
 
   return (

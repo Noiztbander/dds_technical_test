@@ -30,9 +30,11 @@ export interface IArtworkRepository {
   getArtworks({
     query,
     current_page,
+    artwork_types,
   }: {
     query?: string;
     current_page?: number;
+    artwork_types?: string[];
   }): Promise<RequestResponse<IArtworkEntity>>;
 }
 
@@ -55,13 +57,21 @@ export class ArtworkRepository implements IArtworkRepository {
   async getArtworks({
     query = "",
     current_page = 1,
+    artwork_types = [],
   }: {
     query?: string;
     current_page?: number;
+    artwork_types?: string[];
   }): Promise<RequestResponse<IArtworkEntity>> {
     try {
       const response = await fetch(
-        `${artInstituteChicagoConfig.baseUrl}/artworks/search?q=${query}&fields=id,title,place_of_origin,artwork_type_title,image_id&page=${current_page}&limit=12`,
+        `${
+          artInstituteChicagoConfig.baseUrl
+        }/artworks/search?q=${query}&fields=id,title,place_of_origin,artwork_type_title,image_id&page=${current_page}&limit=12${
+          !!artwork_types.length
+            ? `&query[match][artwork_type_title]=${artwork_types}`
+            : ""
+        }`,
         {
           ...requestConfig("GET"),
         }

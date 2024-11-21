@@ -14,11 +14,17 @@ export class ArtworkGetter implements IArtworkGetter {
   async getArtworks({
     query = "",
     current_page = 1,
+    artwork_types = [],
   }: {
     query?: string;
     current_page?: number;
+    artwork_types?: string[];
   }): Promise<IArtworkEntity> {
-    const response = await this.repository.getArtworks({ query, current_page });
+    const response = await this.repository.getArtworks({
+      query,
+      current_page,
+      artwork_types,
+    });
 
     return response.data;
   }
