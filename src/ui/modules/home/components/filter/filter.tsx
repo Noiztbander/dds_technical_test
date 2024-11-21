@@ -1,8 +1,8 @@
 import InputSearch from "@/ui/modules/common/input-search/input-search";
-import Select from "@/ui/modules/common/select/select";
 
 import styles from "./filter.module.css";
 import TagSection from "./tag-section/tag-section";
+import Select from "../../../common/select/select";
 
 const Filter = () => {
   return (
