@@ -8,9 +8,8 @@ const BigTitle = () => {
       </h1>
 
       <p>
-        Explore thousands of artworks in the museum’s collection—from our <br />
+        Explore thousands of artworks in the museum’s collection—from our
         renowned icons to lesser-known works from every corner of the globe—as
-        <br />
         well as our books, writings, reference materials, and other resources.
       </p>
     </header>

@@ -40,7 +40,7 @@ export class ArtworkRepository implements IArtworkRepository {
   async getArtworkTypes(): Promise<RequestResponse<IArtworkTypeEntity>> {
     try {
       const response = await fetch(
-        `${artInstituteChicagoConfig.baseUrl}/artwork-types?fields=id,title&limit=24`,
+        `${artInstituteChicagoConfig.baseUrl}/artwork-types?fields=id,title&limit=48`,
         {
           ...requestConfig("GET"),
         }

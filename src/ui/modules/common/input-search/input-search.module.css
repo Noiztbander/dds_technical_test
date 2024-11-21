@@ -1,7 +1,9 @@
 .inputSearch {
   position: relative;
   height: 75px;
-  width: 564px;
+  min-width: 320px;
+  width: 100%;
+  max-width: 564px;
 
   input {
     padding: 10px 20px;
@@ -14,9 +16,39 @@
     color: #080705;
   }
 
-  i {
+  button {
     position: absolute;
     right: 20px;
     top: 23px;
+    background-color: transparent;
+    border: none;
+
+    i {
+      svg {
+        height: 27px;
+        width: 27px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .inputSearch {
+    height: 49px;
+
+    input {
+      font-size: 20px;
+    }
+
+    button {
+      top: 18px;
+
+      i {
+        svg {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
   }
 }

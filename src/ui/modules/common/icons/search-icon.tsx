@@ -2,8 +2,8 @@ const SearchIcon = ({ color = "#080705" }: { color?: string }) => {
   return (
     <i>
       <svg
-        width="27"
-        height="27"
+        width="10"
+        height="10"
         viewBox="0 0 27 27"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

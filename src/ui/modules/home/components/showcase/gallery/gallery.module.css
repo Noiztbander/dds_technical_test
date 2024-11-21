@@ -2,39 +2,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   min-height: 500px;
   min-width: 50vw;
   width: 100%;
-  text-align: center;
   color: #080705;
 }
 
 .gallery {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 352px);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   grid-auto-flow: dense;
-  align-items: center;
   justify-content: center;
   align-items: center;
+  justify-items: center;
   grid-gap: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
   .gallery {
-    grid-template-columns: repeat(3, 352px);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (max-width: 900px) {
   .gallery {
-    grid-template-columns: repeat(2, 352px);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .gallery {
-    grid-template-columns: repeat(1, 352px);
+    grid-template-columns: repeat(1, 1fr);
   }
 }

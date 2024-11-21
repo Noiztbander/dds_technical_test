@@ -1,6 +1,8 @@
 .selectContainer {
   position: relative;
-  width: 301px;
+  min-width: 220px;
+  width: 100%;
+  max-width: 301px;
   height: 51px;
 
   .button {
@@ -76,6 +78,15 @@
         background-color: #e59cba;
         color: white;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .selectContainer {
+    max-width: unset;
+    .title {
+      font-size: 30px;
     }
   }
 }

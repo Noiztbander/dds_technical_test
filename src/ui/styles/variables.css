@@ -3,13 +3,13 @@
   --max-tablet-width: 1000px;
   --max-desktop-width: 1400px;
 
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ececec;
+  --foreground: white;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ececec;
+    --foreground: white;
   }
 }

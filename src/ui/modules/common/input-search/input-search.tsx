@@ -11,6 +11,7 @@ import {
   runUpdateArtworks,
 } from "@/ui/lib/context/chicago-institute-context/actions/runs";
 import { fetchGetArtworks } from "@/app/actions";
+import CloseIcon from "../icons/close-icon";
 
 const InputSearch = () => {
   const { dispatch, state } = useChicagoArtInsTituteContext();
@@ -18,8 +19,14 @@ const InputSearch = () => {
   const [query, setQuery] = useState("");
   const debouncedInputValue = useDebounce(query, 500);
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const onInputCHangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
+  };
+
+  const onClickHandler = () => {
+    if (query?.length) {
+      setQuery("");
+    }
   };
 
   useEffect(() => {
@@ -38,9 +45,13 @@ const InputSearch = () => {
       <input
         value={query}
         placeholder="Search the archive"
-        onChange={handleInputChange}
+        onChange={onInputCHangeHandler}
       />
-      <SearchIcon />
+      <button
+        onClick={onClickHandler}
+        style={{ cursor: query.length ? "pointer" : "initial" }}>
+        {query?.length ? <CloseIcon /> : <SearchIcon />}
+      </button>
     </div>
   );
 };

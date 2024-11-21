@@ -5,5 +5,12 @@
   align-items: center;
   flex-direction: row;
   gap: 20px;
-  min-height: 40px;
+  height: fit-content;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .tagSection {
+    min-height: unset;
+  }
 }
