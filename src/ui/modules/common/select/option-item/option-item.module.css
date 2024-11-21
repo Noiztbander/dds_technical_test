@@ -39,3 +39,7 @@
     color: white;
   }
 }
+
+.option:hover {
+  background-color: #1a1a1a;
+}

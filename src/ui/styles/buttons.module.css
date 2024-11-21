@@ -1,0 +1,40 @@
+.btn_hover {
+  color: #080705;
+
+  background-size: 300% 100%;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
+  path {
+    fill: #080705;
+  }
+}
+
+.btn_hover:hover {
+  color: white;
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+
+  path {
+    fill: #ffffff;
+  }
+}
+
+.btn_hover:focus {
+  outline: none;
+}
+
+.btn_hover.color_inverse_black {
+  background-image: linear-gradient(
+    to right,
+    #c8c8c8,
+    #c8c8c8,
+    #42484d,
+    #000000
+  );
+}

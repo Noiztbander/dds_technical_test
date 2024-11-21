@@ -13,8 +13,6 @@
 
   .btnPrev {
     cursor: pointer;
-    background-color: #c8c8c8;
-    color: #080705;
     border-radius: 4px;
     padding: 12px 11px;
     display: flex;
@@ -31,8 +29,6 @@
 
   .btnNext {
     cursor: pointer;
-    background-color: #c8c8c8;
-    color: #080705;
     border-radius: 4px;
     padding: 12px 11px;
     display: flex;

@@ -1,10 +1,12 @@
 "use client";
 
+import classNames from "classnames";
 import ArrowDown from "@/ui/modules/common/icons/arrow-down";
-import styles from "./pagination-footer.module.css";
 import { useChicagoArtInsTituteContext } from "@/ui/lib/context/chicago-institute-context/provider";
 import { fetchGetArtworks } from "@/app/actions";
 import { runUpdateArtworks } from "@/ui/lib/context/chicago-institute-context/actions/runs";
+import styles from "./pagination-footer.module.css";
+import buttonStyles from "@/ui/styles/buttons.module.css";
 
 const PaginationFooter = () => {
   const { state, dispatch } = useChicagoArtInsTituteContext();
@@ -32,8 +34,14 @@ const PaginationFooter = () => {
   return (
     <section className={styles.paginationContainer}>
       {state.pagination.current_page !== 1 && (
-        <button className={styles.btnPrev} onClick={onClickPreviousPageHandler}>
-          <ArrowDown color="#080705" />
+        <button
+          className={classNames(
+            styles.btnPrev,
+            buttonStyles.btn_hover,
+            buttonStyles.color_inverse_black
+          )}
+          onClick={onClickPreviousPageHandler}>
+          <ArrowDown />
           Previous page
         </button>
       )}
@@ -43,9 +51,15 @@ const PaginationFooter = () => {
       </p>
 
       {state.pagination.current_page !== state.pagination.total_pages && (
-        <button className={styles.btnNext} onClick={onClickNextPageHandler}>
+        <button
+          className={classNames(
+            styles.btnNext,
+            buttonStyles.btn_hover,
+            buttonStyles.color_inverse_black
+          )}
+          onClick={onClickNextPageHandler}>
           Next page
-          <ArrowDown color="#080705" />
+          <ArrowDown />
         </button>
       )}
     </section>
