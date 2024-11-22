@@ -1,6 +1,4 @@
 import ChicagoInstituteImage from "@/ui/modules/common/chicago-institute-image/chicago-institute-image";
-
-import styles from "./gallery-item.module.css";
 import { IArtwork } from "@/core/art-institute-chicago/domain/artwork";
 import {
   blackWords,
@@ -11,9 +9,20 @@ import {
   pinkWords,
 } from "./constants";
 import { useMemo } from "react";
+import classnames from "classnames";
 import RoundTagItem from "@/ui/modules/common/tags/round-tag-item/round-tag-item";
 
-const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
+import styles from "./gallery-item.module.css";
+
+const GalleryItem = ({
+  artwork,
+  className,
+  style,
+}: {
+  artwork: IArtwork;
+  className?: string;
+  style?: object;
+}) => {
   const getCardColor = useMemo((): {
     background: string;
     secondary_color: string;
@@ -46,8 +55,8 @@ const GalleryItem = ({ artwork }: { artwork: IArtwork }) => {
 
   return (
     <article
-      className={styles.card}
-      style={{ backgroundColor: getCardColor.background }}>
+      className={classnames(className, styles.card)}
+      style={{ ...style, backgroundColor: getCardColor.background }}>
       <div className={styles.imageContainer}>
         <ChicagoInstituteImage
           className={styles.img}

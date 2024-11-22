@@ -23,6 +23,11 @@ const Gallery = () => {
     <section className={styles.gallery}>
       {state.artworks.map((artwork: IArtwork, index) => (
         <GalleryItem
+          style={{
+            animation: "forwards fadeIn",
+            animationDelay: `${index}00ms`,
+            animationDuration: "1s",
+          }}
           key={`artwork-${index}-${artwork.image_id}`}
           artwork={artwork}
         />

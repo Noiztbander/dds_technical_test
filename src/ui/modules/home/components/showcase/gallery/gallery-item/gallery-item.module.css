@@ -8,6 +8,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 40px;
+  opacity: 0;
 
   .imageContainer {
     z-index: 20;
