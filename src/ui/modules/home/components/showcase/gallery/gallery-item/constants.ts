@@ -24,9 +24,27 @@ export const CARD_COLOR = {
   },
 };
 
-export const lightblueWords = ["architect", "photograph"];
-export const pinkWords = ["print", "furniture", "deco", "book"];
-export const blackWords = ["textile", "glass", "mixed", "metal"];
+export const lightblueWords = [
+  "architect",
+  "photograph, vessel, equip, video",
+  "basketry",
+];
+export const pinkWords = [
+  "print",
+  "furniture",
+  "deco",
+  "book",
+  "graphic",
+  "arm",
+];
+export const blackWords = [
+  "textile",
+  "glass",
+  "mixed",
+  "metal",
+  "digital",
+  "sculpt",
+];
 export const darkBlueWords = [
   "painting",
   "costume",
